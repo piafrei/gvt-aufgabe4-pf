@@ -1,0 +1,121 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <script src="./js/butterflyObject.js" defer></script>
+        <script src="./js/second.js" defer></script>
+        <script src="./js/own.js" defer></script>
+    </head>
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            margin: 15px;
+        }
+ 
+        .box-wrapper {
+            height: 95vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+ 
+ 
+        #box3 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+        }
+ 
+        #box4 {
+            flex-grow: 2;
+        }
+ 
+        #box8 {
+            flex-grow: 1;
+        }
+        .font{
+            font-size: 38px;
+            font-weight: bold;
+            margin-top: 5%
+        }
+        p,a{
+            padding: 5px;
+            font-size: 28px;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+    </style>
+    <body>
+
+        <div class="box-wrapper">
+ 
+        <div id="box3">
+            <div id="box4">
+                <canvas id="canvasButterfly" width="700" height="700"></canvas>
+                <div class="font">
+                    Enneper´s Surface <br/> 
+                    <p>
+
+                    x = u - (u<sup>3</sup>/3) + u*v<sup>2</sup>   <br/>
+                    y = v - (v<sup>3</sup>/3) + u<sup>2</sup> * v  <br/>
+                    z = u<sup>2</sup> - v<sup>2</sup><br/>
+                    <br/>
+                    Definitionsbereich:<br/>
+                    u ist Element der Zahlenmenge [-2, 2]<br/>
+                    v ist Element der Zahlenmenge [-2, 2]</p>
+                    <br/>
+                    <a href="http://www.3d-meier.de/tut3/Seite10.html">Link zur Quelle</a>
+                </div>
+            </div>
+            <div id="box5">
+                <canvas id="canvas" width="700" height="700"></canvas>
+                <div class="font">
+                    Twisted Sphere <br/> 
+                    <p>
+
+                    x = a * cos(u) * cos(v)    <br/>
+                    y = a * sin(v) + b * u  <br/>
+                    z = a * sin(u) * cos(v)<br/>
+
+                    mit a = 0.2 und b = 0.2
+                    <br/>
+                    <br/>
+                    Definitionsbereich:<br/>
+                    u ist Element der Zahlenmenge [0, 2 pi]<br/>
+                    v ist Element der Zahlenmenge [-pi, pi]</p>
+                    <br/>
+                    <a href="http://www.3d-meier.de/tut3/Seite118.html">Link zur Quelle</a>
+                </div>
+            </div>
+            <div id="box8">
+                <canvas id="own" width="700" height="700"></canvas>
+                <div class="font">
+                    Eigene Parametrisierung <br/> 
+                    <p>
+
+                    x = (R + r * Math.cos(v)) * Math.cos(u)    <br/>
+                    y = (r * Math.sin(v))<sup>2</sup> - 3 <br/>
+                    z = Math.sqrt((R + r * Math.cos(v)) * Math.sin(u))<br/>
+                    <br/>
+                    Ausgangspunkt: <a href="http://www.3d-meier.de/tut3/Seite58.html">Torus</a> <br/>
+                    Schritt 1: Tauschen der y und z Ebene --> Ansicht von der Seite <br/>
+                    Schritt 2: Potenzieren der y Ebene mit 2 --> Auswölbung nach oben <br/>
+                    Schritt 3: Verschiebung y um Konstante 3 
+                    <br/>
+                    <br/>
+                    Definitionsbereich:<br/>
+                    u ist Element der Zahlenmenge [0, 2 pi]<br/>
+                    v ist Element der Zahlenmenge [0, 2 pi]</p>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
